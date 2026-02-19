@@ -2,82 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSS Grid Layout Demo</title>
+  <title>Grid Layout</title>
   <link rel="stylesheet" href="styles.css">
 	<style>
 		body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  background: #eee;
+  font-family: serif;
 }
 
-.grid-container {
+.container {
   display: grid;
-  grid-template-areas:
-    "header header header"
-    "sidebar main aside"
-    "footer footer footer";
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 80px 1fr 60px;
-  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 120px 150px 150px 150px 150px;
   gap: 10px;
   padding: 10px;
+  height: 100vh;
 }
 
-/* Assign areas */
-header {
-  grid-area: header;
-  background: #4CAF50;
+.box {
+  background: #3b7f1e;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 48px;
+  padding: 20px;
 }
 
-nav {
-  grid-area: sidebar;
-  background: #2196F3;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Grid Placement */
+
+.box1 {
+  grid-column: 1 / 5; /* full width */
 }
 
-main {
-  grid-area: main;
-  background: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.box2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 6; /* tall sidebar */
 }
 
-aside {
-  grid-area: aside;
-  background: #ff9800;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.box3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
 }
 
-footer {
-  grid-area: footer;
-  background: #333;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.box4 {
+  grid-column: 3 / 5;
+  grid-row: 2 / 3;
+}
+
+.box5 {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+.box6 {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+}
+
+.box7 {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.box8 {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+
+.box9 {
+  grid-column: 4 / 5;
+  grid-row: 4 / 5;
+}
+
+.box10 {
+  grid-column: 2 / 5;
+  grid-row: 5 / 6;
 }
 
 	</style>
 </head>
 <body>
 
-  <div class="grid-container">
-    <header>Header</header>
-    <nav>Sidebar</nav>
-    <main>Main Content</main>
-    <aside>Extra Content</aside>
-    <footer>Footer</footer>
+  <div class="container">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+    <div class="box box5">5</div>
+    <div class="box box6">6</div>
+    <div class="box box7">7</div>
+    <div class="box box8">8</div>
+    <div class="box box9">9</div>
+    <div class="box box10">10</div>
   </div>
 
 </body>
